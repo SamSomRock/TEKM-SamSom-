@@ -228,6 +228,47 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
+  // SUPPORT MODAL
+  // ==========================================
+  const supportModalOverlay = document.getElementById('supportModalOverlay');
+  const supportModalClose = document.getElementById('supportModalClose');
+  const supportInfoTrigger = document.getElementById('supportInfoTrigger');
+
+  function openSupportModal() {
+    if (!supportModalOverlay) return;
+    supportModalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSupportModal() {
+    if (!supportModalOverlay) return;
+    supportModalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (supportInfoTrigger) {
+    supportInfoTrigger.addEventListener('click', openSupportModal);
+  }
+
+  if (supportModalClose) {
+    supportModalClose.addEventListener('click', closeSupportModal);
+  }
+
+  if (supportModalOverlay) {
+    supportModalOverlay.addEventListener('click', (e) => {
+      if (e.target === supportModalOverlay) {
+        closeSupportModal();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && supportModalOverlay && supportModalOverlay.classList.contains('active')) {
+      closeSupportModal();
+    }
+  });
+
+  // ==========================================
   // EXTERNAL SHOP BUTTONS
   // ==========================================
   document.querySelectorAll('[data-external="teepublic"]').forEach(btn => {
