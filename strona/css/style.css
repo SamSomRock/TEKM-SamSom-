@@ -428,6 +428,38 @@ body {
   box-shadow: 0 0 15px rgba(251, 191, 36, 0.2);
 }
 
+.btn-support {
+  background: var(--accent-yellow);
+  color: #0a0a0a;
+  border-color: var(--accent-yellow);
+}
+
+.btn-support:hover {
+  background: #eab308;
+  border-color: #eab308;
+  transform: translateY(-1px);
+}
+
+.support-info-trigger {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.support-info-trigger:hover {
+  color: var(--accent-yellow);
+}
+
 /* ============================================
    SECTIONS COMMON
    ============================================ */
@@ -913,6 +945,34 @@ body {
 .modal-caption p {
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+.support-modal-body {
+  padding: 2.5rem 2rem 2rem;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.support-modal-body h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-yellow);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+  margin-top: 2rem;
+}
+
+.support-modal-body h3:first-child {
+  margin-top: 0;
+}
+
+.support-modal-body p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+  text-align: left;
 }
 
 /* DustVersum specific modal */
